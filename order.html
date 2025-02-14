@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Trouble</title>
+   
+     <!--=============== BOX ICONS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+     <!--=============== CUSTOM CSS ===============-->
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    
+      <!--=============== NAVIGATION BAR ===============-->
+
+      <!-- <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-brand">
+            <a href="index.html">
+              <img src="img/logo.png" alt="Logo"/>
+            </a>
+          </div> -->
+  
+           <!--=============== HAMBURGER MENU ===============-->
+  
+          <button type="button" class="hamburger" id="menu-btn">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+      </nav>
+      
+            <!--=============== MOBILE MENU ===============-->
+
+          <div class="mobile-menu hidden" id="menu">
+            <ul>
+                <li>
+                    <div class="container">
+                       
+                        <a href="payment.html">
+                            <i class='bx bx-shopping-bag cart-icon'></i>
+                        </a>
+                    </div>
+                </li>
+              <li>
+                  <a href="menu.html">Menu</a>
+              </li>
+              <li>
+                  <a href="about.html">About Us</a>
+              </li>
+              <li>
+                  <a href="blog.html">Blog</a>
+              </li>
+              <li>
+                  <a href="order.html">Order Now</a>
+              </li>
+              <li>
+                  <a href="contact.html">Contact</a>
+              </li>
+              <li>
+                  <a href="faq.html">FAQS</a>
+              </li>
+            </ul>
+      
+            <div class="mobile-menu-bottom">
+              <button class="btn btn-dark-outline">Sign in</button>
+              <button class="btn btn-dark">Join now</button>
+              <div>
+                <a href="#">
+                  <img src="img/marker.svg" alt="" />
+                  <span>Find a store</span>
+                </a>
+              </div>
+            </div>
+        </div>
+
+   <!--=============== machine ===============-->
+
+<section class="main">
+    <!--MACHINE-->
+    <div class="main__left">
+        <div class="main__left__window">
+            <div class="main__left__window__bg">
+                <img class="js-windowBg" src="img/night.avif" alt="window-bg">
+            </div>
+        </div>
+        
+        <div class="main__left__glass">
+            <div class="main__left__glass__reflect"></div>
+            <div class="main__left__glass__reflect-2"></div>
+        </div>
+        <div class="main__left__plant">
+                <img src="img/plant.png" alt="plant">
+            </div>
+    </div>
+    <div class="main__machine">
+        <div class="main__machine__top">
+            <div class="main__machine__top__square-1"></div>
+            <div class="main__machine__top__square-2"></div>
+            <div class="main__machine__top__button-1"></div>
+            <div class="main__machine__top__button-2"></div>
+            <div class="main__machine__top__circle">
+                <div class="main__machine__top__circle__liquid">
+                </div>
+            </div>
+        </div>
+        <div class="main__machine__middle js-middle">
+            <div class="main__machine__middle__liquid animation"></div>
+            <div class="main__machine__middle__distrib">
+                <div class="main__machine__middle__distrib__top"></div>
+                <div class="main__machine__middle__distrib__middle"></div>
+                <div class="main__machine__middle__distrib__bot"></div>
+                <!--DISTRIB LIQUID-->
+                <!-- <div class="main__machine__middle__distrib__liquid animation"></div> -->
+                <!--DISTRIB BUBBLE-->
+                <div class="main__machine__middle__distrib__topping">
+                    <!--BUBBLE EVERYWHERE HIHI-->
+                    <div class="topping__tapioca hidden">
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca ">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-1">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-2">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-3">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-4">
+                        </div>
+                        <div class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca  
+                        main__machine__middle__distrib__topping__bubble-5"></div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-6">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-7">
+                        </div>
+                    </div>
+                    <div class="topping__jelly hidden">
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly ">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-1">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-2">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-3">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-4">
+                        </div>
+                        <div class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly  
+                        main__machine__middle__distrib__topping__bubble-5"></div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-6">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-7">
+                        </div>
+                    </div>
+                    <div class="topping__multi hidden">
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly ">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-1">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-2">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-3">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly main__machine__middle__distrib__topping__bubble-4">
+                        </div>
+                        <div class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__jelly
+                        main__machine__middle__distrib__topping__bubble-5"></div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-6">
+                        </div>
+                        <div
+                            class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__machine__middle__bg js-middle-bg">
+            </div>
+        </div>
+        <div class="main__machine__support"></div>
+        <div class="main__machine__bot"></div>
+    </div>
+    <!--BUBBLE TEA CUP CONTAIN-->
+    <div class="main__cup hidden">
+        <!--SHYNE-->
+        <div class="main__cup__shine"></div>
+        <!--STRAW-->
+        <div class="main__cup__straw"></div>
+        <!--BUBBLE TEA CUP TOP-->
+        <div class="main__cup__top"></div>
+        <!--BUBBLE TEA CUP BODY + LABEL LOGO-->
+        <div class="main__cup__body">
+            <!--BUBBLE TEA CUP LIQUID-->
+            <div class="main__cup__body__liquid">
+                <div class="main__cup__body__liquid__flavor"></div>
+            </div>
+            <div class="main__cup__body__label"></div>
+            <div class="main__cup__body__contain">
+                <img class="main__cup__body__contain__logo" src="img/logo1.png">
+            </div>
+        </div>
+        <!--BUBBLE TEA CUP BOT-->
+        <div class="main__cup__bot"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="shelf">
+            <div class="clock">
+                <div class="alarm_left"></div>
+                <div class="alarm_right"></div>
+                <div class="hour_hand"></div>
+                <div class="minutes_hand"></div>
+                <div class="seconds_hand"></div>
+                <div class="legs_left"></div>
+                <div class="legs_right"></div>
+            </div>
+            <div class="books">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+            </div> 
+        </div>
+    </div>
+    <div class="main__right__flowerpot">
+        <img src="img/flower-pot.png" alt="plant">
+
+    </div>
+</section>
+     <!--=============== FOOTER ===============-->
+
+     <section class="board">
+        <!--TITLE-->
+        <div class="board__title">
+            <h1 class="board__title welcome">Welcome To Bubble Trouble!</h1>
+            <h1 class="board__title size hidden">select your cup size</h1>
+            <h1 class="board__title base hidden">select your base</h1>
+            <h1 class="board__title label hidden">select your label color</h1>
+            <h1 class="board__title flavor hidden">select your flavor</h1>
+            <h1 class="board__title topping hidden">select your topping</h1>
+            <h1 class="board__title straw hidden">select your straw</h1>
+            <h1 class="board__title done hidden">You're done !</h1>
+        </div>
+        <!-- WELCOME -->
+        <div class="board__welcome">
+            <div class="board__welcome__text">
+                <p> Let's get you your own Bubble Tea! Order here by customizing your order with topping of! </p>
+            </div>
+            <div class="board__welcome__button">
+                <h2>start</h2>
+            </div>
+        </div>
+        <!--CUP SIZE-->
+        <div class="board__size hidden">
+            <div class="board__size__button largeSize">
+                <div class="board__size__button__top"></div>
+                <div class="board__size__button__middle__large"></div>
+                <div class="board__size__button__bot"></div>
+                <h2>large</h2>
+            </div>
+            <div class="board__size__button mediumSize">
+                <div class="board__size__button__top"></div>
+                <div class="board__size__button__middle__medium"></div>
+                <div class="board__size__button__bot"></div>
+                <h2>medium</h2>
+            </div>
+            <div class="board__size__button smallSize">
+                <div class="board__size__button__top"></div>
+                <div class="board__size__button__middle__small"></div>
+                <div class="board__size__button__bot"></div>
+                <h2>small</h2>
+            </div>
+        </div>
+        <!--Hot or cold-->
+        <!-- <div class="base_tea hidden">
+            <div class="base_tea__button" data="rgba(60, 60, 60, 0.3)">
+                <h2>Milk Tea</h2>
+            </div>
+            <div class="base_tea__button" data="rgba(145, 180, 150, 0.6)">
+                <h2>Juice Tea</h2>
+            </div>
+        </div> -->
+        <div class="board__base hidden">
+            <div class="board__base__button" data="rgba(60, 60, 60, 0.3)">
+                <h2>Black Tea</h2>
+            </div>
+            <div class="board__base__button" data="rgba(145, 180, 150, 0.6)">
+                <h2>Green Tea</h2>
+            </div>
+            <div class="board__base__button" data="rgba(243, 225, 107, 0.6)">
+                <!-- <img class="lemon" src="img/lemon.png"> -->
+                <h2>Lemon Base</h2>
+            </div>
+        </div>
+        <!--LABEL-->
+        <div class="board__label hidden">
+            <!--berry-->
+            <div class="board__label__button" data="rgba(129, 7, 44, 0.8)"> passion fruit
+            </div>
+            <!--taro-->
+            <div class="board__label__button" data="rgb(190, 173, 209)"> taro
+            </div>
+            <!--MANGO-->
+            <div class="board__label__button" data="rgba(255, 157, 65, 1)"> mango
+            </div>
+            <!--LYCHEE-->
+            <div class="board__label__button" data="rgba(255, 190, 179, 1)"> lychee
+            </div>
+            <!--CHERRY-->
+            <div class="board__label__button" data="#F7818E"> strawberry
+            </div>
+            <!--pineapple-->
+            <div class="board__label__button" data="rgba(249, 234, 96, 0.8)"> pineapple
+            </div>
+            <!--brown sugar-->
+            <div class="board__label__button" data="rgba(227, 186, 143, 0.9)"> brown sugar
+            </div>
+        </div>
+        <!--FLAVOR-->
+        <div class="board__flavor hidden">
+            <div class="board__flavor__button" data="rgba(162, 206, 124, 0.9)">
+                <h2>matcha</h2>
+            </div>
+            <div class="board__flavor__button" data="rgba(129, 7, 44, 0.8)">
+                <h2>passion fruit</h2>
+            </div>
+            <div class="board__flavor__button" data="rgba(208, 192, 228, 0.9)">
+                <h2>taro</h2>
+            </div>
+            <div class="board__flavor__button" data="rgba(249, 234, 96, 0.8)">
+                <h2>pineapple</h2>
+            </div>
+            <div class="board__flavor__button" data="rgba(255, 157, 65, 0.9)">
+                <h2>mango</h2>
+            </div>
+            <div class="board__flavor__button" data="rgba(255, 190, 179, 0.9)">
+                <h2>lychee</h2>
+            </div>
+            <div class="board__flavor__button" data="rgba(227, 186, 143, 0.9)">
+                <h2>brown sugar</h2>
+            </div>
+        </div>
+        <!--TOPPING-->
+        <div class="board__topping hidden">
+            <div class="board__topping__button tapioca" data="#462713">
+                <h2>tapioca</h2>
+            </div>
+            <div class="board__topping__button jelly" data="#fb8fc5">
+                <h2>jelly</h2>
+            </div>
+            <div class="board__topping__button multi" data="linear-gradient(-45deg, #462713 50%, #fb8fc5 50%)">
+                <h2>both</h2>
+            </div>
+        </div>
+        <!--STRAW-->
+        <div class="board__straw hidden">
+            <!--berry-->
+            <div class="board__straw__button board__straw__button__berry "
+                data="repeating-linear-gradient(20deg, white, white 10px, rgba(144, 161, 218, 1) 10px, rgba(144, 161, 218, 1) 20px)">
+            </div>
+            <!--TARO-->
+            <div class="board__straw__button board__straw__button__taro "
+                data="repeating-linear-gradient(20deg, white, white 10px, rgb(208, 192, 228) 10px, rgb(208, 192, 228) 20px)">
+            </div>
+            <!--MANGO-->
+            <div class="board__straw__button board__straw__button__mango "
+                data="repeating-linear-gradient(20deg, white, white 10px, rgba(255, 157, 65, 1) 10px, rgba(255, 157, 65, 1) 20px)">
+            </div>
+            <!--lychee-->
+            <div class="board__straw__button board__straw__button__lychee "
+                data="repeating-linear-gradient(20deg, white, white 10px, rgba(255, 190, 179, 0.8) 10px, rgba(255, 190, 179, 0.8) 20px)">
+            </div>
+            <!--cherry-->
+            <div class="board__straw__button board__straw__button__cherry "
+                data="repeating-linear-gradient(20deg, white, white 10px, rgba(255, 91, 91, 0.8) 10px, rgba(255, 91, 91, 0.8) 20px)">
+            </div>
+            <!--jelly-->
+            <div class="board__straw__button board__straw__button__jelly "
+                data="repeating-linear-gradient(20deg, white, white 10px, #fb8fc5 10px, #fb8fc5 20px)">
+            </div>
+            <!--tapioca + jelly -->
+            <div class="board__straw__button board__straw__button__tapioca "
+                data="repeating-linear-gradient(20deg, white, white 10px, #462713 10px, #462713 20px)">
+            </div>
+            <!--berry + taro-->
+            <div class="board__straw__button board__straw__button__berry-taro"
+                data="repeating-linear-gradient(20deg, rgba(144, 161, 218, 1), rgba(144, 161, 218, 1) 10px, rgba(208, 192, 228, 1) 10px, rgba(208, 192, 228, 1) 20px)">
+            </div>
+            <!--CHERRY + LYCHEE-->
+            <div class="board__straw__button board__straw__button__cherry-lychee "
+                data="repeating-linear-gradient(20deg, rgba(255, 190, 179, 1), rgba(255, 190, 179, 1) 10px, rgba(255, 91, 91, 1) 10px, rgba(255, 91, 91, 1) 20px)">
+            </div>
+        </div>
+        <div class="board__done hidden">
+            <div class="board__done__text">
+                <p>Thanks for ordering! Please submit your order and wait for order number to generate. Once your order is ready present your order number and pay !
+                    Have a tea-riffic day !
+                </p>
+            </div>
+            <div class="board__done__button">
+                <h2>return to homepage</h2>
+            </div>
+        </div>
+        <div class="board__footer">
+            <div class="board__footer__trash hidden">
+                <img alt="trash" src="img/trash.svg">
+            </div>
+            <div class="board__footer__night">
+                <img class="hidden js-night" alt="night" src="img/night.svg">
+                <img class="js-day" alt="day" src="img/day.svg">
+            </div>
+        </div>
+    </section>
+    <!--=============== CUSTOM JS ===============-->
+
+    <script src="js/order.js"></script>
+
+    <script src="js/homepage.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        let Hour_hand = document.querySelector('.hour_hand');
+        let Minutes_hand = document.querySelector('.minutes_hand'); 
+        let seconds_hand = document.querySelector('.seconds_hand'); 
+        let clock = document.querySelector('.clock');
+        let interval = setInterval(() => {
+        let date = new Date(); 
+        let Hour = date.getHours() * 30; //360/12
+        let Minutes = date.getMinutes()*6; // 360/60
+        let seconds = date.getSeconds()*6; //360/60
+        seconds_hand.style.transform = `translate(-50%, -100%) rotate(${seconds}deg)`; 
+        Minutes_hand.style.transform = `translate(-50%, -100%) rotate(${Minutes}deg)`; 
+        Hour_hand.style.transform = `translate(-50%, -100%) rotate(${Hour + Minutes/ 12 }deg)`;  // Minutes * 60/5  
+
+        }, 60);
+
+    </script>
+
+</body>
+</html>

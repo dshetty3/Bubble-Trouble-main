@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Boba Buddies Tea Company</title>
+    
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+     <!--=============== CUSTOM STYLES ===============-->
+
+    <link rel="stylesheet" href="css/homepage.css"/>
+    
+    <!--=============== FLICKITY ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+     <!--=============== JQUERY ===============-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  </head>
+  <body>
+
+     <!--=============== NAVIGATION BAR ===============-->
+
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a href="index.html">
+            <img src="img/logo.png" alt="Logo"/>
+          </a>
+        </div>
+
+        <ul class="navbar-nav-left">
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+            <li>
+                <a href="blog.html">Blog</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="faqs.html">FAQS</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav-right">
+          <li>
+            <a href="stores.html">
+              <img src="img/marker.svg" alt="" />
+              <span>Find a store</span>
+            </a>
+          </li>
+        </ul>
+
+         <!--=============== HAMBURGER MENU ===============-->
+
+        <button type="button" class="hamburger" id="menu-btn">
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+    </nav>
+
+     <!--=============== MOBILE MENU ===============-->
+
+    <div class="mobile-menu hidden" id="menu">
+      <ul>
+        
+        <li>
+            <a href="about.html">About Us</a>
+        </li>
+        <li>
+            <a href="blog.html">Blog</a>
+        </li>
+        
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+        <li>
+            <a href="faqs.html">FAQS</a>
+        </li>
+      </ul>
+      <div class="mobile-menu-bottom">
+        <button class="btn btn-dark-outline">Sign in</button>
+        <button class="btn btn-dark">Join now</button>
+        <div>
+          <a href="stores.html">
+            <img src="img/marker.svg" alt="" />
+            <span>Find a store</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <!-- =============== Background =============== -->
+      <section>
+        <div class="p-one parallax-inner">
+          <h2>Welcome to Bubble Trouble</h2>
+          <h1>The perfect balance of sweet and tea!</h1>
+          <button class="button-89" role="button" onclick="window.location.href='order.html'">Order Now</button>
+        </div>
+        
+      </section>
+
+     <!--=============== ALL ABOUT US ===============-->
+
+    <section class="col-section">
+      <h2 class="title">About Us</h2>
+      <div class="border"> </div>
+      <p class="intro"> Imagine your drink decided it wasn’t enough to just quench your thirst—it wanted to entertain you too. 
+        Enter boba, also known as bubble tea, where your beverage doubles as a snack! These chewy, gummy-like pearls sit at the bottom of your cup, waiting to be slurped up through a comically large straw.
+        So, if you’re tired of boring, predictable beverages, boba is here to make your day delightfully chewy and unreasonably exciting! 🍹✨</p>
+      
+      <div class="col-container">
+          <div class="col-box">
+              <div class="col-img">
+                  <img src="img/tapioca.jpg" alt="">
+              </div>
+              <div class="col-text">
+                  <a href="" class="col-title">Tapioca Pearls</a>
+                  <p><i>small, chewy, round balls made from tapioca starch, typically with a slightly sweet flavor and a gummy-like texture</i></p>
+              </div>
+          </div>
+          <div class="col-box">
+              <div class="col-img">
+                  <img src="img/popping boba.webp" alt="">
+              </div>
+              <div class="col-text">
+                  <a href="" class="col-title">Bursting Boba</a>
+                  <p><i>a thin, gel-like skin with juice inside that bursts when popped. 
+                    available in different fruit flavours</i></p>
+              </div>
+          </div>
+          <div class="col-box">
+            <div class="col-img">
+                <img src="img/fruit-jelly.jpg" alt="">
+            </div>
+            <div class="col-text">
+                <a href="" class="col-title">Fruit Jelly</a>
+                <p><i>small, chewy pieces of fruit-flavored jelly are added to a cup of brewed green tea</i></p>
+            </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="col-section">
+    <h2 class="title">our bases - available in green and black both</h2>
+    <div class="border"> </div>
+    <p class="intro"> </p>
+    
+    <div class="col-container">
+        <div class="col-box">
+            <div class="col-img">
+                <img src="img/fruit-tea.jpg" alt="">
+            </div>
+            <div class="col-text">
+                <a href="" class="col-title">Fruit Tea</a>
+                <p><i>experience the refreshing blend of natural fruit flavors and premium tea leaves in our fruit tea. crafted for a burst of sweetness and vitality, it's a delicious way to stay hydrated and energized</i></p>
+            </div>
+        </div>
+        <div class="col-box">
+            <div class="col-img">
+                <img src="img/milk-tea.jpg" alt="">
+            </div>
+            <div class="col-text">
+                <a href="" class="col-title">Milk Tea</a>
+                <p><i>indulge in the creamy richness of our milk tea, a delightful fusion of smooth tea and velvety milk. perfectly balanced for a comforting and satisfying treat any time of day</i></p>
+            </div>
+        </div>
+        <div class="col-box">
+          <div class="col-img">
+              <img src="img/lemon-series.jpg" alt="">
+          </div>
+          <div class="col-text">
+              <a href="" class="col-title">Lemon Tea</a>
+              <p><i>refresh your senses with our zesty lemon tea, a perfect blend of tangy citrus and premium tea leaves. bright, invigorating, and packed with natural goodness - available in green tea only.</i></p>
+          </div>
+      </div>
+    </div>
+</section>
+ 
+
+    <!-- <h2 class="title">Featured Drinks</h2>
+    <div class="border"> </div>
+    <section class="box box-b bg-secondary grid-col-2">
+      <img src="img/chocolate.jpeg" alt="chocolate bubble tea"/>
+      <div class="box-text">
+        <h2 class="text-xl">Chocolate Bubble</h2>
+        <p class="text-md">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam distinctio 
+            reprehenderit asperiores deleniti. Tempore soluta repellat esse iusto laborum atque 
+            sunt tempora veniam aspernatur corrupti. Libero accusantium ipsam ut quia?
+        </p>
+        <a href="order.html" class="btn btn-light-outline">Order Now</a>
+      </div>
+    </section>
+
+
+    <section class="box box-c bg-secondary grid-col-2 grid-reversed">
+      <img src="img/carousel-1.jpeg" alt="classic bubble tea" />
+      <div class="box-text">
+        <h2 class="text-xl">Classic Bubble</h2>
+        <p class="text-md">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam distinctio 
+          reprehenderit asperiores deleniti. Tempore soluta repellat esse iusto laborum atque 
+          sunt tempora veniam aspernatur corrupti. Libero accusantium ipsam ut quia?
+      </p>
+        <a href="order.html" class="btn btn-light-outline">Order Now</a>
+      </div>
+    </section>
+
+
+    <section class="box box-d bg-secondary grid-col-2">
+      <img src="img/brownsugar.jpeg" alt="brown sugar bubble tea"/>
+      <div class="box-text">
+        <h2 class="text-xl">Brown Sugar</h2>
+        <p class="text-md">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam distinctio 
+          reprehenderit asperiores deleniti. Tempore soluta repellat esse iusto laborum atque 
+          sunt tempora veniam aspernatur corrupti. Libero accusantium ipsam ut quia?
+      </p>
+        <a href="order.html" class="btn btn-light-outline">Order Now</a>
+      </div>
+    </section> -->
+
+
+    
+
+     <!--=============== REVIEWS ===============-->
+
+    <!-- <section class="reviews">
+      <div class="reviews-inner">
+        <h2 class="title">Reviews</h2>
+        <div class="border"> </div>
+        <div class="row">
+          <div class="col">
+            <div class="review">
+              <img src="img/review-1.jpeg" alt="Michelle's Headshot">
+              <div class="name">Michelle C.</div>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Velit perspiciatis voluptatum nam autem alias obcaecati nihil maxime omnis animi eveniet doloremque, 
+                tenetur accusamus esse veritatis! Repellendus exercitationem delectus ullam dicta.
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="review">
+              <img src="img/review-2.jpeg" alt="Darragh's Headshot">
+              <div class="name">Darragh H.</div>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Velit perspiciatis voluptatum nam autem alias obcaecati nihil maxime omnis animi eveniet doloremque, 
+                tenetur accusamus esse veritatis! Repellendus exercitationem delectus ullam dicta.
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="review">
+              <img src="img/review-3.jpeg" alt="Aishah's Headshot">
+              <div class="name">Aishah A.</div>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Velit perspiciatis voluptatum nam autem alias obcaecati nihil maxime omnis animi eveniet doloremque, 
+                tenetur accusamus esse veritatis! Repellendus exercitationem delectus ullam dicta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!--=============== FOOTER ===============-->
+
+    <section class="footer">
+      <div class="footer-box">
+          <h2>Bubble Trouble</h2>
+          <p>This website is created only for educational purposes. All Rights Reserved. 2025</p>
+          <div class="social">
+              <a href="https://www.facebook.com/"><i class='bx bxl-facebook'></i></a>
+              <a href="https://linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+              <a href="https://www.instagram.com/"><i class='bx bxl-instagram' ></i></a>
+          </div>
+      </div>
+      <div class="footer-box">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+          </ul>
+      </div>
+      <div class="footer-box">
+          <h3>View Guides</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blog.html">Blog Posts</a></li>
+            <li><a href="stores.html">Our Stores</a></li>
+          </ul>
+      </div>
+      <div class="footer-box">
+          <h3>Contact</h3>
+          <div class="contact">
+              <span><i class='bx bxs-phone' ></i>+353 33 3333</span>
+              <span><i class='bx bxs-envelope' ></i>contact@bobabuddies.com</span>
+          </div>
+      </div>
+  </section>
+
+
+    <!--=============== CUSTOM JS ===============-->
+
+    <script src="js/homepage.js"></script>
+
+     <!--=============== FLICKITY ===============-->
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+   <script>
+        $('.main-carousel').flickity({
+            cellAlign: 'left',
+            wrapAround: true,
+            freeScroll: true
+          });
+   </script>
+    
+  </body>
+</html>
