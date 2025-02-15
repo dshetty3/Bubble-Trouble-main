@@ -12,6 +12,7 @@ const nextButton = document.querySelector('.js-next-button')
 const welcomeButton = document.querySelectorAll('.board__welcome__button')
 const doneButton = document.querySelectorAll('.board__done__button')
 const sizeButton = document.querySelectorAll('.board__size__button')
+const teaBaseButton = document.querySelectorAll('.base_tea__button')
 const baseButton = document.querySelectorAll('.board__base__button')
 const flavorButton = document.querySelectorAll('.board__flavor__button')
 const toppingButton = document.querySelectorAll('.board__topping__button')
@@ -40,6 +41,7 @@ const board = document.querySelector('.board')
 const boardTitle = document.querySelector('.board__title')
 const boardWelcome = document.querySelector('.board__welcome')
 const boardSize = document.querySelector('.board__size')
+const teaBase = document.querySelector('.base_tea')
 const boardBase = document.querySelector('.board__base')
 const boardFlavor = document.querySelector('.board__flavor')
 const boardTopping = document.querySelector('.board__topping')
@@ -135,10 +137,10 @@ sizeButton.forEach(sizeButton => {
             boardSize.classList.add('next-board')
         }, 100);
         boardTitle.querySelector('.size').classList.add('hidden')
-        boardTitle.querySelector('.label').classList.remove('hidden')
+        boardTitle.querySelector('.tea').classList.remove('hidden')
         boardLabel.classList.add('hidden')
-        boardBase.classList.remove('hidden')
-        // boardSize.classList.add('hidden')
+        teaBase.classList.remove('hidden')
+
     })
 })
 // BOARD > CUP SIZE > large
@@ -166,27 +168,27 @@ smallSize.addEventListener('click', () => {
     }
 })
 
-
-
-// BOARD > LABEL > BUTTON
-labelButton.forEach(labelButton => {
-    labelButton.addEventListener('click', () => {
-        stickSound.play()
-        label.style.background = labelButton.getAttribute('data')
-        // activeButton = strawButton
-        // boardStraw.classList.remove('hidden')
+//Base
+teaBaseButton.forEach(teaBaseButton => {
+    teaBaseButton.addEventListener('click', () => {
+        servSound.play()
+        flavorLiquid.classList.remove('flavor-animation')
+        distribLiquid.classList.remove('distrib-animation')
+        circleLiquid.style.background = teaBaseButton.getAttribute('data')
+        flavorLiquid.style.background = teaBaseButton.getAttribute('data')
+        distribLiquid.style.background = teaBaseButton.getAttribute('data')
         setTimeout(() => {
-            boardLabel.classList.add('next-board')
+            flavorLiquid.classList.add('base-flavor-animation')
+            distribLiquid.classList.add('distrib-animation')
+
         }, 100);
-        boardTitle.querySelector('.label').classList.add('hidden')
-        boardTitle.querySelector('.straw').classList.add('hidden')
-        boardTitle.querySelector('.flavor').classList.remove('hidden')
-        boardFlavor.classList.remove('hidden')
+        boardTitle.querySelector('.tea').classList.add('hidden')
+        boardTitle.querySelector('.base').classList.remove('hidden')
+        teaBase.classList.remove('hidden')
+        boardBase.classList.remove('hidden')
         boardSize.classList.add('hidden')
-        // boardLabel.classList.add('hidden')
-    })
-    labelButton.addEventListener('mouseover', () => {
-        label.style.background = labelButton.getAttribute('data')
+        teaBase.classList.add('hidden')
+
     })
 })
 
@@ -195,25 +197,44 @@ baseButton.forEach(baseButton => {
         servSound.play()
         flavorLiquid.classList.remove('flavor-animation')
         distribLiquid.classList.remove('distrib-animation')
-        // flavorButton.style.background = flavorButton.getAttribute('data')
         circleLiquid.style.background = baseButton.getAttribute('data')
         flavorLiquid.style.background = baseButton.getAttribute('data')
         distribLiquid.style.background = baseButton.getAttribute('data')
-        // distribTopping.style.background = baseButton.getAttribute('data')
         setTimeout(() => {
             flavorLiquid.classList.add('base-flavor-animation')
             distribLiquid.classList.add('distrib-animation')
-            // distribTopping.classList.add('distrib-topping')
 
         }, 100);
+        boardTitle.querySelector('.base').classList.add('hidden')
+        boardTitle.querySelector('.label').classList.remove('hidden')
         boardBase.classList.remove('hidden')
         boardSize.classList.add('hidden')
         boardLabel.classList.remove('hidden')
         boardBase.classList.add('hidden')
-        
-        // boardFlavor.classList.add('hidden')
     })
 })
+
+
+
+// BOARD > LABEL > BUTTON
+labelButton.forEach(labelButton => {
+    labelButton.addEventListener('click', () => {
+        stickSound.play()
+        label.style.background = labelButton.getAttribute('data')
+        setTimeout(() => {
+            boardLabel.classList.add('next-board')
+        }, 100);
+        boardTitle.querySelector('.label').classList.add('hidden')
+        boardTitle.querySelector('.straw').classList.add('hidden')
+        boardTitle.querySelector('.flavor').classList.remove('hidden')
+        boardFlavor.classList.remove('hidden')
+        boardSize.classList.add('hidden')
+    })
+    labelButton.addEventListener('mouseover', () => {
+        label.style.background = labelButton.getAttribute('data')
+    })
+})
+
 
 // BOARD > FLAVOR > BUTTON
 flavorButton.forEach(flavorButton => {
@@ -230,7 +251,6 @@ flavorButton.forEach(flavorButton => {
             flavorLiquid.classList.add('flavor-animation')
             distribLiquid.classList.add('distrib-animation')
             boardFlavor.classList.add('next-board')
-            // distrib.Child(distrib.children).style.background = 'pink'
         }, 100);
         boardTitle.querySelector('.topping').classList.remove('hidden')
         boardTitle.querySelector('.flavor').classList.add('hidden')
@@ -253,10 +273,8 @@ toppingButton.forEach(toppingButton => {
         }, 200)
         distribTopping.classList.remove('distrib-topping')
         circleLiquid.style.background = toppingButton.getAttribute('data')
-        // toppingButton.style.background = toppingButton.getAttribute('data')
         setTimeout(() => {
             distrib.classList.add('change-distrib')
-            // distrib.style.width = '230px'
             distribBot.style.width = '0px'
             distribTopping.classList.add('distrib-topping')
             boardTopping.classList.add('next-board')
@@ -268,7 +286,10 @@ toppingButton.forEach(toppingButton => {
         boardStraw.classList.remove('hidden')
         boardFlavor.classList.add('hidden')
         boardSize.classList.add('hidden')
-        // boardTopping.classList.add('hidden')
+        boardStraw.classList.remove('hidden')
+        straw.classList.add('straw-animation')
+        straw.style.background = "repeating-linear-gradient(20deg, white, white 10px, rgba(144, 161, 218, 1) 10px, rgba(144, 161, 218, 1) 20px)";
+        circleLiquid.style.background = 'white'
     })
 })
 
@@ -292,32 +313,7 @@ multiButton.addEventListener('click', function () {
     jelly.classList.add('hidden')
 })
 
-// BOARD > STRAW 
-strawButton.forEach(strawButton => {
-    strawButton.addEventListener('click', () => {
-        stickSound.play()
-        // strawSound.play()
-        straw.classList.add('straw-animation')
-        straw.style.background = strawButton.getAttribute('data')
-        circleLiquid.style.background = 'white'
-        setTimeout(() => {
-            // distrib.style.width = '0px'
-            // distribBot.style.width = '0px'
-            boardStraw.classList.add('next-board')
-        }, 100);
-        activeButton = strawButton
-        // boardStraw.classList.remove('hidden')
-        boardTitle.querySelector('.done').classList.remove('hidden')
-        boardTitle.querySelector('.label').classList.add('hidden')
-        boardTitle.querySelector('.straw').classList.add('hidden')
-        boardFlavor.classList.add('hidden')
-        boardLabel.classList.add('hidden')
-        boardTopping.classList.add('hidden')
-        boardSize.classList.add('hidden')
-        boardStraw.classList.add('hidden')
-        boardDone.classList.remove('hidden')
-    })
-})
+
 
 //DISK MUSIC PLAY
 //play
@@ -325,7 +321,6 @@ strawButton.forEach(strawButton => {
 
 
 
-//FOTTER
 //FOOTER > TRASH
 trash.addEventListener('click', () => {
     stickSound.play()
@@ -356,9 +351,7 @@ trash.addEventListener('click', () => {
     }, 100);
     cup.classList.add('hidden')
     distrib.classList.remove('change-distrib')
-    // distrib.classList.remove('hidden')
     distribBot.style.width = '20%'
-    // flavorButton.style.background = "#4e4444"
     boardTitle.querySelector('.welcome').classList.add('hidden')
     boardTitle.querySelector('.topping').classList.add('hidden')
     boardTitle.querySelector('.flavor').classList.add('hidden')
@@ -369,7 +362,6 @@ trash.addEventListener('click', () => {
 })
 
 // NIGHT MODE
-
 nightMode.addEventListener('click', night)
 dayMode.addEventListener('click', day)
 

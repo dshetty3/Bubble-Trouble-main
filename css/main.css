@@ -822,7 +822,7 @@
         width: 60%;
         height: 5px;
         background: rgba(255, 255, 255, 0.3); }
-  .board__flavor, .board__base {
+  .board__flavor, .board__base, .base_tea {
     position: absolute;
     animation-name: board-button;
     animation-duration: 1.5s;
@@ -832,7 +832,7 @@
     align-items: center;
     width: 100%;
     height: 53%; }
-    .board__flavor__button, .board__base__button {
+    .board__flavor__button, .board__base__button, .base_tea__button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -844,11 +844,12 @@
       transition: 0.3s; }
       
       
-      .board__flavor__button h2, .board__base__button h2{
+      .board__flavor__button h2, .board__base__button h2, .base_tea__button h2{
         font-family: 'Fjalla One', sans-serif;
         text-transform: uppercase;
         font-size: 10px;
-        color: white;
+        color: #131111;
+        font-weight: bold;
         letter-spacing: 1px; }
         .board__flavor__button h2:hover{
           scale: 0.5; }
@@ -1064,6 +1065,7 @@
   animation-timing-function: linear; }
 .base-flavor-animation {
   animation-name: base-flavor;
+  opacity: 0.6;
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-delay: 1s;
@@ -1136,7 +1138,7 @@
     transform: translateY(100%);
     animation-timing-function: cubic-bezier(0.5, 1, 0.5, 1); }
   100% {
-    transform: translateY(40%); } }
+    transform: translateY(70%); } }
 @keyframes distrib-liquid {
   0% {
     height: 0px;
