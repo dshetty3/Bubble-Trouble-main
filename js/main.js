@@ -1,6 +1,13 @@
-// VARIABLES
 // MAIN
 const main = document.querySelector('.main')
+const orderState = {
+    size: null,
+    tea: null,
+    base: null,
+    flavor: null,
+    topping: null,
+    label: null
+};
 
 // BUTTON
 // BUTTON > DISK
@@ -8,6 +15,7 @@ const playButton = document.querySelector('.js-play-button')
 const pauseButton = document.querySelector('.js-pause-button')
 const prevButton = document.querySelector('.js-prev-button')
 const nextButton = document.querySelector('.js-next-button')
+
 // BUTTON > BOARD
 const welcomeButton = document.querySelectorAll('.board__welcome__button')
 const doneButton = document.querySelectorAll('.board__done__button')
@@ -67,7 +75,6 @@ const multiButton = document.querySelector('.multi')
 // SOUND 
 //effect
 const servSound = new Audio('audio/serv2.mp3');
-const toppingSound = new Audio('audio/topping.wav');
 const bubbleSound = new Audio('audio/bubble.mp3');
 const stickSound = new Audio('audio/stick.mp3');
 const trashSound = new Audio('audio/trash.wav');
@@ -140,7 +147,8 @@ sizeButton.forEach(sizeButton => {
         boardTitle.querySelector('.tea').classList.remove('hidden')
         boardLabel.classList.add('hidden')
         teaBase.classList.remove('hidden')
-
+        orderState.size = sizeButton.getAttribute('data'); 
+        document.getElementById("size").value = orderState.size;
     })
 })
 // BOARD > CUP SIZE > large
@@ -180,7 +188,6 @@ teaBaseButton.forEach(teaBaseButton => {
         setTimeout(() => {
             flavorLiquid.classList.add('base-flavor-animation')
             distribLiquid.classList.add('distrib-animation')
-
         }, 100);
         boardTitle.querySelector('.tea').classList.add('hidden')
         boardTitle.querySelector('.base').classList.remove('hidden')
@@ -188,6 +195,8 @@ teaBaseButton.forEach(teaBaseButton => {
         boardBase.classList.remove('hidden')
         boardSize.classList.add('hidden')
         teaBase.classList.add('hidden')
+        orderState.tea = teaBaseButton.getAttribute('value'); 
+        document.getElementById("base").value = orderState.tea;
 
     })
 })
@@ -211,6 +220,8 @@ baseButton.forEach(baseButton => {
         boardSize.classList.add('hidden')
         boardLabel.classList.remove('hidden')
         boardBase.classList.add('hidden')
+        orderState.base = baseButton.getAttribute('value'); 
+        document.getElementById("base").value = orderState.tea + " + " + orderState.base;
     })
 })
 
@@ -225,14 +236,16 @@ labelButton.forEach(labelButton => {
             boardLabel.classList.add('next-board')
         }, 100);
         boardTitle.querySelector('.label').classList.add('hidden')
-        boardTitle.querySelector('.straw').classList.add('hidden')
         boardTitle.querySelector('.flavor').classList.remove('hidden')
         boardFlavor.classList.remove('hidden')
         boardSize.classList.add('hidden')
+        orderState.label = labelButton.getAttribute('value'); 
+        document.getElementById("label").value = orderState.label;
     })
-    labelButton.addEventListener('mouseover', () => {
+    labelButton.addEventListener('click', () => {
         label.style.background = labelButton.getAttribute('data')
     })
+   
 })
 
 
@@ -240,9 +253,7 @@ labelButton.forEach(labelButton => {
 flavorButton.forEach(flavorButton => {
     flavorButton.addEventListener('click', () => {
         servSound.play()
-        // flavorLiquid.classList.remove('flavor-animation')
         distribLiquid.classList.remove('distrib-animation')
-        // flavorButton.style.background = flavorButton.getAttribute('data')
         circleLiquid.style.background = flavorButton.getAttribute('data')
         flavorLiquid.style.background = flavorButton.getAttribute('data')
         distribLiquid.style.background = flavorButton.getAttribute('data')
@@ -254,13 +265,14 @@ flavorButton.forEach(flavorButton => {
         }, 100);
         boardTitle.querySelector('.topping').classList.remove('hidden')
         boardTitle.querySelector('.flavor').classList.add('hidden')
-        boardTitle.querySelector('.straw').classList.add('hidden')
         boardTitle.querySelector('.label').classList.add('hidden')
         boardTopping.classList.remove('hidden')
         boardStraw.classList.add('hidden')
         boardLabel.classList.add('hidden')
         boardSize.classList.add('hidden')
-        // boardFlavor.classList.add('hidden')
+        orderState.flavor = flavorButton.getAttribute('value'); 
+        document.getElementById("flavor").value = orderState.flavor;
+
     })
 })
 
@@ -268,9 +280,7 @@ flavorButton.forEach(flavorButton => {
 // BOARD > TOPPING > BUTTON
 toppingButton.forEach(toppingButton => {
     toppingButton.addEventListener('click', () => {
-        setTimeout(() => {
-            toppingSound.play()
-        }, 200)
+       
         distribTopping.classList.remove('distrib-topping')
         circleLiquid.style.background = toppingButton.getAttribute('data')
         setTimeout(() => {
@@ -278,18 +288,23 @@ toppingButton.forEach(toppingButton => {
             distribBot.style.width = '0px'
             distribTopping.classList.add('distrib-topping')
             boardTopping.classList.add('next-board')
-        }, 100);
+        }, 200);
         // next
-        boardTitle.querySelector('.straw').classList.remove('hidden')
         boardTitle.querySelector('.flavor').classList.add('hidden')
         boardTitle.querySelector('.topping').classList.add('hidden')
-        boardStraw.classList.remove('hidden')
         boardFlavor.classList.add('hidden')
         boardSize.classList.add('hidden')
         boardStraw.classList.remove('hidden')
-        straw.classList.add('straw-animation')
-        straw.style.background = "repeating-linear-gradient(20deg, white, white 10px, rgba(144, 161, 218, 1) 10px, rgba(144, 161, 218, 1) 20px)";
-        circleLiquid.style.background = 'white'
+        setTimeout(() => { 
+            straw.classList.add('straw-animation')
+            straw.style.background = "repeating-linear-gradient(20deg, white, white 10px, rgba(144, 161, 218, 1) 10px, rgba(144, 161, 218, 1) 20px)";
+            circleLiquid.style.background = 'white'
+            boardTitle.querySelector('.done').classList.remove('hidden')
+            boardDone.classList.remove('hidden')
+        }, 2000)
+        orderState.topping = toppingButton.getAttribute('value'); 
+        document.getElementById("topping").value = orderState.topping;
+
     })
 })
 
@@ -314,17 +329,9 @@ multiButton.addEventListener('click', function () {
 })
 
 
-
-//DISK MUSIC PLAY
-//play
-
-
-
-
 //FOOTER > TRASH
 trash.addEventListener('click', () => {
     stickSound.play()
-    // window.location.reload();
     tapioca.classList.add('hidden')
     jelly.classList.add('hidden')
     multi.classList.add('hidden')
@@ -348,17 +355,24 @@ trash.addEventListener('click', () => {
         boardDone.classList.add('hidden')
         boardSize.classList.remove('hidden')
         boardBase.classList.add('hidden')
+        teaBase.classList.add('hidden')
     }, 100);
     cup.classList.add('hidden')
     distrib.classList.remove('change-distrib')
     distribBot.style.width = '20%'
+    boardTitle.querySelector('.size').classList.remove('hidden')
     boardTitle.querySelector('.welcome').classList.add('hidden')
     boardTitle.querySelector('.topping').classList.add('hidden')
+    boardTitle.querySelector('.base').classList.add('hidden')
+    boardTitle.querySelector('.tea').classList.add('hidden')
     boardTitle.querySelector('.flavor').classList.add('hidden')
     boardTitle.querySelector('.done').classList.add('hidden')
     boardTitle.querySelector('.label').classList.add('hidden')
-    boardTitle.querySelector('.straw').classList.add('hidden')
-    boardTitle.querySelector('.size').classList.remove('hidden')
+    document.getElementById("size").value = " ";
+    document.getElementById("base").value = " ";
+    document.getElementById("label").value = " ";
+    document.getElementById("flavor").value = " ";
+    document.getElementById("toppings").value = " ";
 })
 
 // NIGHT MODE

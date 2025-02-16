@@ -249,8 +249,22 @@
     </div>
     <div class="main__right__flowerpot">
         <img src="img/flower-pot.png" alt="plant">
-
     </div>
+		<div class="blackboard">
+				<div class="form">
+					<label>Size: </label>
+					<input type="text" id = "size" value=" "/> <br>
+					<label>Base: </label> 
+					<input type="text" id = "base" value=" "/> <br>
+					<label>Label: </label>
+					<input type="text" id="label" value=" "/><br>
+					<label>Flavor: </label>
+					<input type="text" id="flavor" value=" "/>	<br>
+                    <label>Toppings: </label>
+					<input type="text" id="topping" value=" "/> <br>
+				</div>
+		</div>
+
 </section>
      <!--=============== FOOTER ===============-->
 
@@ -264,7 +278,7 @@
             <h1 class="board__title label hidden">select your label color</h1>
             <h1 class="board__title flavor hidden">select your flavor</h1>
             <h1 class="board__title topping hidden">select your topping</h1>
-            <h1 class="board__title straw hidden">select your straw</h1>
+            <!-- <h1 class="board__title straw hidden">select your straw</h1> -->
             <h1 class="board__title done hidden">You're done !</h1>
         </div>
         <!-- WELCOME -->
@@ -278,19 +292,19 @@
         </div>
         <!--CUP SIZE-->
         <div class="board__size hidden">
-            <div class="board__size__button largeSize">
+            <div class="board__size__button largeSize" data="Large">
                 <div class="board__size__button__top"></div>
                 <div class="board__size__button__middle__large"></div>
                 <div class="board__size__button__bot"></div>
                 <h2>large</h2>
             </div>
-            <div class="board__size__button mediumSize">
+            <div class="board__size__button mediumSize" data="Medium">
                 <div class="board__size__button__top"></div>
                 <div class="board__size__button__middle__medium"></div>
                 <div class="board__size__button__bot"></div>
                 <h2>medium</h2>
             </div>
-            <div class="board__size__button smallSize">
+            <div class="board__size__button smallSize" data="Small">
                 <div class="board__size__button__top"></div>
                 <div class="board__size__button__middle__small"></div>
                 <div class="board__size__button__bot"></div>
@@ -300,22 +314,22 @@
         <!--Hot or cold-->
 
         <div class="base_tea hidden">
-            <div class="base_tea__button" data="#f2f2f2">
+            <div class="base_tea__button" data="#f2f2f2" value="Milk">
                 <h2>Milk Tea</h2>
             </div>
-            <div class="base_tea__button" data="rgba(145, 180, 150, 0.6)">
+            <div class="base_tea__button" data="rgba(145, 180, 150, 0.6)" value="Juice">
                 <h2>Juice Tea</h2>
             </div>
         </div>
 
         <div class="board__base hidden">
-            <div class="board__base__button" data="rgba(60, 60, 60, 0.3)">
+            <div class="board__base__button" data="rgba(60, 60, 60, 0.3)" value="Black Tea">
                 <h2>Black Tea</h2>
             </div>
-            <div class="board__base__button" data="rgba(145, 180, 150, 0.6)">
+            <div class="board__base__button" data="rgba(145, 180, 150, 0.6)" value="Green Tea">
                 <h2>Green Tea</h2>
             </div>
-            <div class="board__base__button" data="rgba(243, 225, 107, 0.6)">
+            <div class="board__base__button" data="rgba(243, 225, 107, 0.6)" value="Lemon Base">
                 <!-- <img class="lemon" src="img/lemon.png"> -->
                 <h2>Lemon Base</h2>
             </div>
@@ -323,69 +337,66 @@
         <!--LABEL-->
         <div class="board__label hidden">
             <!--berry-->
-            <div class="board__label__button" data="rgba(129, 7, 44, 0.8)"> passion fruit
+            <div class="board__label__button" data="rgba(129, 7, 44, 0.8)" value="PassionFruit"> passion fruit
             </div>
             <!--taro-->
-            <div class="board__label__button" data="rgb(190, 173, 209)"> taro
+            <div class="board__label__button" data="rgb(190, 173, 209)" value="Taro"> taro
             </div>
             <!--MANGO-->
-            <div class="board__label__button" data="rgba(255, 157, 65, 1)"> mango
+            <div class="board__label__button" data="rgba(255, 157, 65, 1)" value="Mango"> mango
             </div>
             <!--LYCHEE-->
-            <div class="board__label__button" data="rgba(255, 190, 179, 1)"> lychee
+            <div class="board__label__button" data="rgba(255, 190, 179, 1)" value="Lychee"> lychee
             </div>
             <!--CHERRY-->
-            <div class="board__label__button" data="#F7818E"> strawberry
+            <div class="board__label__button" data="#F7818E" value="Strawberry"> strawberry
             </div>
             <!--pineapple-->
-            <div class="board__label__button" data="rgba(249, 234, 96, 0.8)"> pineapple
+            <div class="board__label__button" data="rgba(249, 234, 96, 0.8)" value="Pineapple"> pineapple
             </div>
             <!--brown sugar-->
-            <div class="board__label__button" data="rgba(227, 186, 143, 0.9)"> brown sugar
+            <div class="board__label__button" data="rgba(227, 186, 143, 0.9)" value="Brown Sugar"> brown sugar
             </div>
         </div>
         <!--FLAVOR-->
         <div class="board__flavor hidden">
-            <div class="board__flavor__button" data="rgba(162, 206, 124, 0.9)">
+            <div class="board__flavor__button" data="rgba(162, 206, 124, 0.9)" value="Matcha">
                 <h2>matcha</h2>
             </div>
-            <div class="board__flavor__button" data="rgba(129, 7, 44, 0.8)">
+            <div class="board__flavor__button" data="rgba(129, 7, 44, 0.8)" value="Passion Fruit">
                 <h2>passion fruit</h2>
             </div>
-            <div class="board__flavor__button" data="rgba(208, 192, 228, 0.9)">
+            <div class="board__flavor__button" data="rgba(208, 192, 228, 0.9)" vallue="Taro">
                 <h2>taro</h2>
             </div>
-            <div class="board__flavor__button" data="rgba(249, 234, 96, 0.8)">
+            <div class="board__flavor__button" data="rgba(249, 234, 96, 0.8)" value="Pineapple">
                 <h2>pineapple</h2>
             </div>
-            <div class="board__flavor__button" data="rgba(255, 157, 65, 0.9)">
+            <div class="board__flavor__button" data="rgba(255, 157, 65, 0.9)" value="Mango">
                 <h2>mango</h2>
             </div>
-            <div class="board__flavor__button" data="rgba(255, 190, 179, 0.9)">
+            <div class="board__flavor__button" data="rgba(255, 190, 179, 0.9)" value="Lychee">
                 <h2>lychee</h2>
             </div>
-            <div class="board__flavor__button" data="rgba(227, 186, 143, 0.9)">
+            <div class="board__flavor__button" data="rgba(227, 186, 143, 0.9)" value="Brown Sugar">
                 <h2>brown sugar</h2>
             </div>
         </div>
         <!--TOPPING-->
         <div class="board__topping hidden">
-            <div class="board__topping__button tapioca" data="#462713">
+            <div class="board__topping__button tapioca" data="#462713" value="Tapioca">
                 <h2>tapioca</h2>
             </div>
-            <div class="board__topping__button jelly" data="#fb8fc5">
+            <div class="board__topping__button jelly" data="#fb8fc5" value="Jelly">
                 <h2>jelly</h2>
             </div>
-            <div class="board__topping__button multi" data="linear-gradient(-45deg, #462713 50%, #fb8fc5 50%)">
+            <div class="board__topping__button multi" data="linear-gradient(-45deg, #462713 50%, #fb8fc5 50%)" value="Tapioca & Jelly">
                 <h2>both</h2>
             </div>
         </div>
         <!--STRAW-->
         <div class="board__straw hidden">
-            <!--berry-->
-            <div class="board__straw__button board__straw__button__berry "
-                data="repeating-linear-gradient(20deg, white, white 10px, rgba(144, 161, 218, 1) 10px, rgba(144, 161, 218, 1) 20px)">
-            </div>
+        </div>
         </div>
         <div class="board__done hidden">
             <div class="board__done__text">
