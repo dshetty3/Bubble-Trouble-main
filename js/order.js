@@ -2,14 +2,8 @@
 let cartIcon = document.querySelector(".cart-icon");
 let cart = document.querySelector(".cart");
 let closeCart = document.querySelector(".close-cart");
-// Open Cart
-cartIcon.onclick = () => {
-  cart.classList.add("active");
-};
-// Close Cart
-closeCart.onclick = () => {
-  cart.classList.remove("active");
-};
+
+
 
 // Cart Working JS
 if (document.readyState == "loading") {
@@ -103,7 +97,6 @@ function addProductToCart(title, price, productImg) {
     .addEventListener("change", quantityChanged);
 }
 
-// Update Total
 function updatetotal() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
   var cartBoxes = cartContent.getElementsByClassName("cart-box");
@@ -116,11 +109,14 @@ function updatetotal() {
     var quantity = quantityElement.value;
     total = total + price * quantity;
   }
-  // If price Contain some Cents Value
   total = Math.round(total * 100) / 100;
 
   document.getElementsByClassName("total-price")[0].innerText = "€" + total;
 }
+
+
+
+
 
 
 

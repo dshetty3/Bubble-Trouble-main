@@ -746,26 +746,29 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgb(251,196,171 ); }
+      background:  rgb(176, 116, 88); }
       .board__welcome__button:hover {
-        background: rgb(176, 116, 88); }
+        background: rgb(251,196,171 ); }
       .board__welcome__button h2 {
         color: white;
         font-size: 15px;
         letter-spacing: 4px; }
     .board__done__button{
       cursor: pointer;
-      width: 125px;
-      height: 40px;
+      width: 150px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgb(251,196,171 );}
+      background:  rgb(176, 116, 88);}
       .board__done__button:hover {
-        background: rgb(176, 116, 88); }
+        background: rgb(251,196,171 )
+       }
       .board__done__button h2 {
-        color: white;
         font-size: 15px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
       letter-spacing: 4px;}
     
   .board__size {
@@ -930,24 +933,7 @@
       .board__straw__button:hover {
         cursor: pointer;
         border: solid 0.5px white; }
-      .board__straw__button__berry {
-        background: repeating-linear-gradient(20deg, white, white 10px, #90a1da 10px, #90a1da 20px); }
-      .board__straw__button__taro {
-        background: repeating-linear-gradient(20deg, white, white 10px, #d0c0e4 10px, #d0c0e4 20px); }
-      .board__straw__button__mango {
-        background: repeating-linear-gradient(20deg, white, white 10px, #ff9d41 10px, #ff9d41 20px); }
-      .board__straw__button__lychee {
-        background: repeating-linear-gradient(20deg, white, white 10px, rgba(255, 190, 179, 0.8) 10px, rgba(255, 190, 179, 0.8) 20px); }
-      .board__straw__button__cherry {
-        background: repeating-linear-gradient(20deg, white, white 10px, rgba(255, 91, 91, 0.8) 10px, rgba(255, 91, 91, 0.8) 20px); }
-      .board__straw__button__jelly {
-        background: repeating-linear-gradient(20deg, white, white 10px, #fb8fc5 10px, #fb8fc5 20px); }
-      .board__straw__button__tapioca {
-        background: repeating-linear-gradient(20deg, white, white 10px, #462713 10px, #462713 20px); }
-      .board__straw__button__berry-taro {
-        background: repeating-linear-gradient(20deg, #90a1da, #90a1da 10px, #d0c0e4 10px, #d0c0e4 20px); }
-      .board__straw__button__cherry-lychee {
-        background: repeating-linear-gradient(20deg, #ffbeb3, #ffbeb3 10px, #ff5b5b 10px, #ff5b5b 20px); }
+     
   .board__label {
     position: absolute;
     animation-name: board-button;
@@ -1140,31 +1126,28 @@
     transform: translateY(100%);
     animation-timing-function: cubic-bezier(0.5, 1, 0.5, 1); }
   100% {
-    transform: translateY(70%); } }
+    transform: translateY(50%); } }
 @keyframes distrib-liquid {
   0% {
     height: 0px;
     animation-timing-function: cubic-bezier(0.3, 1, 0.3, 1); }
   20% {
-    height: 82%;
+    height: 60%;
     animation-timing-function: cubic-bezier(0.5, 1, 0.5, 1); }
   20% {
     bottom: 12px;
-    height: 82%;
+    height: 60%;
     animation-timing-function: cubic-bezier(1, 1, 1, 1); }
   50% {
     animation-timing-function: cubic-bezier(0.2, 1, 0.2, 1);
     top: 40px; }
-  80% {
-    bottom: calc(--var(height_cup) - 10%);
-    opacity: 0.3; }
   95% {
-    height: 35%;
+    height: 83%;
     opacity: 0; }
   100% {
     animation-timing-function: cubic-bezier(0.1, 1, 0.1, 1);
     opacity: 0;
-    top: 60%;
+    top: 83%;
     height: 0px; } }
 @keyframes board-button {
   0% {
@@ -1418,7 +1401,7 @@
       box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782, 0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgba(0, 0, 0, 0.5);
       background-image: radial-gradient( circle at left 30%, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3) 80px, rgba(34, 34, 34, 0.5) 100px, rgba(51, 51, 51, 0.5) 160px, rgba(51, 51, 51, 0.5)), linear-gradient( 215deg, transparent, transparent 100px, #222 260px, #222 320px, transparent), radial-gradient( circle at right, #111, rgba(51, 51, 51, 1));
       background-color: #333;
-      height: 200px;
+      height: 250px;
       bottom: 100px;
       right: 150px;
   }
@@ -1439,6 +1422,7 @@
   
   .form {
       padding: 20px 10px 10px 20px;
+      
   }
   
   
@@ -1448,6 +1432,7 @@
       font-size: 1.1em;
       text-transform: uppercase;
       color: rgba(238, 238, 238, 0.7);
+
   }
   
   
@@ -1456,11 +1441,12 @@
       background: none;
       border: none;
       font-family: 'Bradley Hand', cursive	;
-      font-size: 1em;
+      font-size: 0.8em;
       text-transform: uppercase;
       color: rgba(238, 238, 238, 0.8);
       line-height: .6em;
       outline: none;
+      font-weight: bold;
   }
 
   input[type="submit"] {
@@ -1469,16 +1455,84 @@
 		line-height: 1em;
 		padding: 0;
 }
+
+
+  button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    background: #adabaa8f;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    left: 70px;
+}
   
+button:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: #383f51;
+    transition: all 0.4s ease-in-out;
+}
   
-  ::-moz-selection {
-      background: rgba(238, 238, 238, 0.2);
-      color: rgba(238, 238, 238, 0.2);
-      text-shadow: none;
-  }
+button:hover::after {
+    left: 0;
+    width: 100%;
+}
   
-  ::selection {
-      background: rgba(238, 238, 238, 0.4);
-      color: rgba(238, 238, 238, 0.3);
-      text-shadow: none;
-  }
+button span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+  
+button:hover span {
+    color:rgb(237, 183, 203);
+    animation: scaleUp 0.3s ease-in-out;
+}
+
+button:not(:hover) span {
+    animation: scaleDown 0.3s ease-in-out;
+}
+  
+@keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.95);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+} 
+
+@keyframes scaleDown {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.95);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+}
+    

@@ -196,7 +196,6 @@ teaBaseButton.forEach(teaBaseButton => {
         boardSize.classList.add('hidden')
         teaBase.classList.add('hidden')
         orderState.tea = teaBaseButton.getAttribute('value'); 
-        document.getElementById("base").value = orderState.tea;
 
     })
 })
@@ -304,6 +303,25 @@ toppingButton.forEach(toppingButton => {
         }, 2000)
         orderState.topping = toppingButton.getAttribute('value'); 
         document.getElementById("topping").value = orderState.topping;
+        document.getElementById("place__order").disabled = false;
+
+
+        const button = document.getElementById("place__order");
+        const blackboard = document.querySelector(".blackboard");
+    
+        button.addEventListener("click", () => {
+            button.innerHTML = `<h2 id="order-placed">Order Placed!</h2>`;
+                setTimeout(() => {
+                const orderHeading = document.getElementById("order-placed");
+                if (orderHeading) {
+                    orderHeading.style.fontFamily = "'Fjalla One', sans-serif"; 
+                    orderHeading.style.color = "white"; 
+                    orderHeading.style.fontSize = "20px";
+                    orderHeading.style.fontWeight = "bold";
+                }
+            }, 0); 
+        });
+    
 
     })
 })
@@ -372,7 +390,7 @@ trash.addEventListener('click', () => {
     document.getElementById("base").value = " ";
     document.getElementById("label").value = " ";
     document.getElementById("flavor").value = " ";
-    document.getElementById("toppings").value = " ";
+    document.getElementById("topping").value = " ";
 })
 
 // NIGHT MODE
@@ -444,5 +462,8 @@ document.addEventListener('keyup', event => {
         quit()
     }
 })
+
+
+
 
 
