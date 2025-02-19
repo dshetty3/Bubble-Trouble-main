@@ -16,19 +16,8 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-    
-      <!--=============== NAVIGATION BAR ===============-->
-
-      <!-- <nav class="navbar">
-        <div class="navbar-container">
-          <div class="navbar-brand">
-            <a href="index.html">
-              <img src="img/logo.png" alt="Logo"/>
-            </a>
-          </div> -->
   
-           <!--=============== HAMBURGER MENU ===============-->
+    <!--=============== HAMBURGER MENU ===============-->
   
           <button type="button" class="hamburger" id="menu-btn">
             <span class="hamburger-top"></span>
@@ -37,55 +26,9 @@
           </button>
         </div>
       </nav>
-      
-            <!--=============== MOBILE MENU ===============-->
-
-          <div class="mobile-menu hidden" id="menu">
-            <ul>
-                <li>
-                    <div class="container">
-                       
-                        <a href="payment.html">
-                            <i class='bx bx-shopping-bag cart-icon'></i>
-                        </a>
-                    </div>
-                </li>
-              <li>
-                  <a href="menu.html">Menu</a>
-              </li>
-              <li>
-                  <a href="about.html">About Us</a>
-              </li>
-              <li>
-                  <a href="blog.html">Blog</a>
-              </li>
-              <li>
-                  <a href="order.html">Order Now</a>
-              </li>
-              <li>
-                  <a href="contact.html">Contact</a>
-              </li>
-              <li>
-                  <a href="faq.html">FAQS</a>
-              </li>
-            </ul>
-      
-            <div class="mobile-menu-bottom">
-              <button class="btn btn-dark-outline">Sign in</button>
-              <button class="btn btn-dark">Join now</button>
-              <div>
-                <a href="#">
-                  <img src="img/marker.svg" alt="" />
-                  <span>Find a store</span>
-                </a>
-              </div>
-            </div>
-        </div>
-
    <!--=============== machine ===============-->
 
 <section class="main">
-    <!--MACHINE-->
     <div class="main__left">
         <div class="main__left__window">
             <div class="main__left__window__bg">
@@ -112,17 +55,15 @@
                 </div>
             </div>
         </div>
+
         <div class="main__machine__middle js-middle">
             <div class="main__machine__middle__liquid animation"></div>
             <div class="main__machine__middle__distrib">
                 <div class="main__machine__middle__distrib__top"></div>
                 <div class="main__machine__middle__distrib__middle"></div>
                 <div class="main__machine__middle__distrib__bot"></div>
-                <!--DISTRIB LIQUID-->
-                <!-- <div class="main__machine__middle__distrib__liquid animation"></div> -->
-                <!--DISTRIB BUBBLE-->
+                
                 <div class="main__machine__middle__distrib__topping">
-                    <!--BUBBLE EVERYWHERE HIHI-->
                     <div class="topping__tapioca hidden">
                         <div
                             class="main__machine__middle__distrib__topping__bubble main__machine__middle__distrib__topping__bubble__tapioca ">
@@ -197,7 +138,7 @@
                         <div
                             class="main__machine__middle__distrib__topping__bubble  main__machine__middle__distrib__topping__bubble__tapioca main__machine__middle__distrib__topping__bubble-7">
                         </div>
-                    </div>
+                    </div>                   
                 </div>
             </div>
             <div class="main__machine__middle__bg js-middle-bg">
@@ -206,17 +147,12 @@
         <div class="main__machine__support"></div>
         <div class="main__machine__bot"></div>
     </div>
-    <!--BUBBLE TEA CUP CONTAIN-->
+
     <div class="main__cup hidden">
-        <!--SHYNE-->
         <div class="main__cup__shine"></div>
-        <!--STRAW-->
         <div class="main__cup__straw"></div>
-        <!--BUBBLE TEA CUP TOP-->
         <div class="main__cup__top"></div>
-        <!--BUBBLE TEA CUP BODY + LABEL LOGO-->
         <div class="main__cup__body">
-            <!--BUBBLE TEA CUP LIQUID-->
             <div class="main__cup__body__liquid">
                 <div class="main__cup__body__liquid__flavor"></div>
             </div>
@@ -253,7 +189,9 @@
 		<div class="blackboard">
 				<div class="form">
 					<label>Size: </label>
-					<input type="text" id = "size" value=" "/> <br>
+                    <input type="text" id = "size" value=" "/> <br>
+					<label>Sugar: </label> 
+					<input type="text" id = "sugar" value=" "/> <br>
 					<label>Base: </label> 
 					<input type="text" id = "base" value=" "/> <br>
 					<label>Label: </label>
@@ -275,14 +213,16 @@
         <div class="board__title">
             <h1 class="board__title welcome">Welcome To Bubble Trouble!</h1>
             <h1 class="board__title size hidden">select your cup size</h1>
+            <h1 class="board__title sugar hidden">select sugar level</h1>
+            <h1 class="board__title ice hidden">select Ice level</h1>
             <h1 class="board__title tea hidden">select your choice - milk or juice</h1>
             <h1 class="board__title base hidden">select your base</h1>
             <h1 class="board__title label hidden">select your label color</h1>
             <h1 class="board__title flavor hidden">select your flavor</h1>
             <h1 class="board__title topping hidden">select your topping</h1>
-            <!-- <h1 class="board__title straw hidden">select your straw</h1> -->
             <h1 class="board__title done hidden">You're done !</h1>
         </div>
+
         <!-- WELCOME -->
         <div class="board__welcome">
             <div class="board__welcome__text">
@@ -292,6 +232,7 @@
                 <h2>start</h2>
             </div>
         </div>
+
         <!--CUP SIZE-->
         <div class="board__size hidden">
             <div class="board__size__button largeSize" data="Large">
@@ -313,7 +254,36 @@
                 <h2>small</h2>
             </div>
         </div>
-        <!--Hot or cold-->
+
+        <div class="board__sugar hidden">
+            <div class="circle board__sugar__button" data="#f2f2f2" value="0%" data-fill="0">
+                <h2 class="circle-text">0%</h2>
+            </div>
+            <div class="circle board__sugar__button" data="rgba(145, 180, 150, 0.6)" value="30%" data-fill="30">
+                <h2 class="circle-text">30%</h2>
+            </div>
+            <div class="circle board__sugar__button" data="rgba(145, 180, 150, 0.6)" value="50%" data-fill="50">
+                <h2 class="circle-text">50%</h2>
+            </div>
+            <div class="circle board__sugar__button" data="rgba(145, 180, 150, 0.6)" value="70%" data-fill="70">
+                <h2 class="circle-text">70%</h2>
+            </div>
+            <div class="circle board__sugar__button" data="rgba(145, 180, 150, 0.6)" value="100%" data-fill="100">
+                <h2 class="circle-text">100%</h2>
+            </div>
+        </div>
+
+        <div class="board__ice hidden">
+            <div class="circle board__ice__button" data="#f2f2f2" value="No Ice">
+                <h2 class="circle-text">No Ice</h2>
+            </div>
+            <div class="circle board__ice__button" data="rgba(145, 180, 150, 0.6)" value="Light Ice">
+                <h2 class="circle-text">Light Ice</h2>
+            </div>
+            <div class="circle board__ice__button" data="rgba(145, 180, 150, 0.6)" value="Regular Ice">
+                <h2 class="circle-text">Regular Ice</h2>
+            </div>
+        </div>
 
         <div class="base_tea hidden">
             <div class="base_tea__button" data="#f2f2f2" value="Milk">
@@ -321,6 +291,9 @@
             </div>
             <div class="base_tea__button" data="rgba(145, 180, 150, 0.6)" value="Fruit">
                 <h2>Fruit Tea</h2>
+            </div>
+            <div class="base_tea__button" data="rgba(243, 225, 107, 0.6)" value="Lemon">
+                <h2>Lemon Series</h2>
             </div>
         </div>
 
@@ -331,36 +304,27 @@
             <div class="board__base__button" data="rgba(145, 180, 150, 0.6)" value="Green Tea">
                 <h2>Green Tea</h2>
             </div>
-            <div class="board__base__button" data="rgba(243, 225, 107, 0.6)" value="Lemon Base">
-                <!-- <img class="lemon" src="img/lemon.png"> -->
-                <h2>Lemon Base</h2>
-            </div>
+            
         </div>
-        <!--LABEL-->
+
         <div class="board__label hidden">
-            <!--berry-->
             <div class="board__label__button" data="rgba(129, 7, 44, 0.8)" value="PassionFruit"> passion fruit
             </div>
-            <!--taro-->
             <div class="board__label__button" data="rgb(190, 173, 209)" value="Taro"> taro
             </div>
-            <!--MANGO-->
             <div class="board__label__button" data="rgba(255, 157, 65, 1)" value="Mango"> mango
             </div>
-            <!--LYCHEE-->
             <div class="board__label__button" data="rgba(255, 190, 179, 1)" value="Lychee"> lychee
             </div>
-            <!--CHERRY-->
             <div class="board__label__button" data="#F7818E" value="Strawberry"> strawberry
             </div>
-            <!--pineapple-->
             <div class="board__label__button" data="rgba(249, 234, 96, 0.8)" value="Pineapple"> pineapple
             </div>
-            <!--brown sugar-->
             <div class="board__label__button" data="rgba(227, 186, 143, 0.9)" value="Brown Sugar"> brown sugar
             </div>
         </div>
-        <!--FLAVOR-->
+
+       
         <div class="board__flavor hidden">
             <div class="board__flavor__button" data="rgba(162, 206, 124, 0.9)" value="Matcha">
                 <h2>matcha</h2>
@@ -384,7 +348,8 @@
                 <h2>brown sugar</h2>
             </div>
         </div>
-        <!--TOPPING-->
+
+        
         <div class="board__topping hidden">
             <div class="board__topping__button tapioca" data="#462713" value="Tapioca">
                 <h2>tapioca</h2>

@@ -2,6 +2,8 @@
 const main = document.querySelector('.main')
 const orderState = {
     size: null,
+    sugar: null,
+    ice: null,
     tea: null,
     base: null,
     flavor: null,
@@ -21,6 +23,8 @@ const welcomeButton = document.querySelectorAll('.board__welcome__button')
 const doneButton = document.querySelectorAll('.board__done__button')
 const sizeButton = document.querySelectorAll('.board__size__button')
 const teaBaseButton = document.querySelectorAll('.base_tea__button')
+const sugarButton = document.querySelectorAll('.board__sugar__button')
+const iceButton = document.querySelectorAll('.board__ice__button')
 const baseButton = document.querySelectorAll('.board__base__button')
 const flavorButton = document.querySelectorAll('.board__flavor__button')
 const toppingButton = document.querySelectorAll('.board__topping__button')
@@ -49,6 +53,8 @@ const board = document.querySelector('.board')
 const boardTitle = document.querySelector('.board__title')
 const boardWelcome = document.querySelector('.board__welcome')
 const boardSize = document.querySelector('.board__size')
+const boardIce = document.querySelector('.board__ice')
+const boardSugar = document.querySelector('.board__sugar')
 const teaBase = document.querySelector('.base_tea')
 const boardBase = document.querySelector('.board__base')
 const boardFlavor = document.querySelector('.board__flavor')
@@ -144,9 +150,10 @@ sizeButton.forEach(sizeButton => {
             boardSize.classList.add('next-board')
         }, 100);
         boardTitle.querySelector('.size').classList.add('hidden')
-        boardTitle.querySelector('.tea').classList.remove('hidden')
+        boardTitle.querySelector('.sugar').classList.remove('hidden')
         boardLabel.classList.add('hidden')
-        teaBase.classList.remove('hidden')
+        boardSugar.classList.remove('hidden')
+        //teaBase.classList.remove('hidden')
         orderState.size = sizeButton.getAttribute('data'); 
         document.getElementById("size").value = orderState.size;
     })
@@ -175,6 +182,56 @@ smallSize.addEventListener('click', () => {
         main.style.setProperty('--height_cup', '130px')
     }
 })
+
+//Sugar Level with fill
+sugarButton.forEach(sugarButton => {
+    sugarButton.addEventListener('click', () => {
+        stickSound.play()
+        flavorLiquid.classList.remove('flavor-animation')
+        distribLiquid.classList.remove('distrib-animation')
+        boardTitle.querySelector('.sugar').classList.add('hidden')
+        boardTitle.querySelector('.ice').classList.remove('hidden')
+        boardSugar.classList.remove('hidden')
+        boardIce.classList.remove('hidden')
+        boardSize.classList.add('hidden')
+        boardSugar.classList.add('hidden')
+        orderState.sugar = sugarButton.getAttribute('value'); 
+    })
+})
+document.querySelectorAll('.circle.board__sugar__button').forEach(circle => {
+    let fillPercentage = circle.getAttribute('data-fill'); 
+    let fillColor = circle.getAttribute('data'); 
+    circle.style.setProperty('--fill-color', fillColor);
+    circle.style.setProperty('--fill-percent', `${fillPercentage}%`);
+    circle.style.background = `linear-gradient(to top, ${fillColor} ${fillPercentage}%, rgb(184, 178, 178) ${fillPercentage}%)`;
+});
+
+
+iceButton.forEach(iceButton => {
+    iceButton.addEventListener('click', () => {
+        stickSound.play()
+        // distribTopping.classList.remove('distrib-topping')
+        // circleLiquid.style.background = iceButton.getAttribute('data')
+        // setTimeout(() => {
+        //     distrib.classList.add('change-distrib')
+        //     distribBot.style.width = '0px'
+        //     distribTopping.classList.add('distrib-topping')
+        //     boardTopping.classList.add('next-board')
+        // }, 200);
+        flavorLiquid.classList.remove('flavor-animation')
+        distribLiquid.classList.remove('distrib-animation')
+        boardTitle.querySelector('.ice').classList.add('hidden')
+        boardTitle.querySelector('.tea').classList.remove('hidden')
+        boardIce.classList.remove('hidden')
+        teaBase.classList.remove('hidden')
+        boardSize.classList.add('hidden')
+        boardIce.classList.add('hidden')
+        orderState.ice = iceButton.getAttribute('value'); 
+        document.getElementById("sugar").value = orderState.sugar + " + " + orderState.ice;
+    })
+})
+
+
 
 //Base
 teaBaseButton.forEach(teaBaseButton => {
@@ -230,6 +287,9 @@ baseButton.forEach(baseButton => {
 labelButton.forEach(labelButton => {
     labelButton.addEventListener('click', () => {
         stickSound.play()
+        if (document.getElementById("base").value == 'milk'){
+            console.log("milk")
+        } else console.log("Other")
         label.style.background = labelButton.getAttribute('data')
         setTimeout(() => {
             boardLabel.classList.add('next-board')
@@ -374,6 +434,8 @@ trash.addEventListener('click', () => {
         boardSize.classList.remove('hidden')
         boardBase.classList.add('hidden')
         teaBase.classList.add('hidden')
+        boardSugar.classList.add('hidden')
+        boardIce.classList.add('hidden')
     }, 100);
     cup.classList.add('hidden')
     distrib.classList.remove('change-distrib')
@@ -386,11 +448,14 @@ trash.addEventListener('click', () => {
     boardTitle.querySelector('.flavor').classList.add('hidden')
     boardTitle.querySelector('.done').classList.add('hidden')
     boardTitle.querySelector('.label').classList.add('hidden')
+    boardTitle.querySelector('.sugar').classList.add('hidden')
+    boardTitle.querySelector('.ice').classList.add('hidden')
     document.getElementById("size").value = " ";
     document.getElementById("base").value = " ";
     document.getElementById("label").value = " ";
     document.getElementById("flavor").value = " ";
     document.getElementById("topping").value = " ";
+    document.getElementById("sugar").value = " ";
 })
 
 // NIGHT MODE

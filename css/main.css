@@ -825,7 +825,7 @@
         width: 60%;
         height: 5px;
         background: rgba(255, 255, 255, 0.3); }
-  .board__flavor, .board__base, .base_tea {
+  .board__flavor, .board__base, .base_tea, .board__sugar, .board__ice {
     cursor: pointer;
     position: absolute;
     animation-name: board-button;
@@ -836,7 +836,7 @@
     align-items: center;
     width: 100%;
     height: 53%; }
-    .board__flavor__button, .board__base__button, .base_tea__button {
+    .board__flavor__button, .board__base__button, .base_tea__button, .board__sugar__button, .board__ice__button {
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -844,12 +844,12 @@
       margin: 0px 18px 0px 18px;
       width: 90px;
       height: 90px;
-      background-color: rgb(184, 178, 178);;
+      background-color: rgb(184, 178, 178);
       border-radius: 90px;
       transition: 0.3s; }
       
       
-      .board__flavor__button h2, .board__base__button h2, .base_tea__button h2{
+      .board__flavor__button h2, .board__base__button h2, .base_tea__button h2, .board__sugar__button h2, .board__ice__button h2{
         font-family: 'Fjalla One', sans-serif;
         text-transform: uppercase;
         font-size: 10px;
@@ -1535,4 +1535,9 @@ button:not(:hover) span {
       transform: scale(1);
     }
 }
+
+
+
+
+
     
