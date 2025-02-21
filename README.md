@@ -1,56 +1,41 @@
+# Bubble Tea Project
 
-<html>
-<body>
-    <header>
-        <h1>Bubble Trouble</h1>
-    </header>
-    <div class="container">
-        <h2>Overview</h2>
-        <p>My pet web project that simulates a online bubble tea shop in a kiosk. The site allows users to choose their bubble tea flavor, size, sweetness level, and toppings. Users can view a preview of their customized order before submitting it.</p>
+## Overview
+This is a simple web project that simulates a bubble tea shop. The site allows users to choose their bubble tea flavor, size, sweetness level, and toppings. Users can view a preview of their customized order before submitting it.
 
-        <h2>Features</h2>
-        <ul>
-            <li>Bubble tea flavor selection</li>
-            <li>Size and sweetness level customization</li>
-            <li>Multiple topping choices</li>
-            <li>Order preview and submission</li>
-        </ul>
+## Features
+- Bubble tea flavor selection
+- Size and sweetness level customization
+- Multiple topping choices
+- Order preview and submission
 
-        <h2>Technologies Used</h2>
-        <p>This project is built with the following technologies:</p>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3 (with Flexbox and Grid)</li>
-            <li>JavaScript (for interactivity)</li>
-        </ul>
+![Bubble Tea](/Users/dishashetty/Desktop/Bubble-Trouble/img/Readme.png)
 
-        <h2>Installation</h2>
-        <p>To run this project locally, follow these steps:</p>
-        <pre>
+## Technologies Used
+This project is built with the following technologies:
+- HTML5
+- CSS3 (with Flexbox and Grid)
+- JavaScript (for interactivity)
+
+## Installation
+To run this project locally, follow these steps:
+
 1. Clone the repository:
-    <code>git clone https://github.com/dshetty3/Bubble-Trouble-main.git</code>
+   ```sh
+   git clone https://github.com/dshetty3/Bubble-Trouble-main.git
+2. Open the index.html file in your preferred web browser. (Can use liver web)
 
-2. Open the <code>index.html</code> file in your preferred web browser.
-        </pre>
+## How to Use
+- Choose the size of your drink.
+- Set the level of sweetness.
+- Select ice level.
+- Select a flavor for your bubble tea.
+- Pick your desired toppings.
+- Click on 'Preview' to see your custom order.
+- Click 'Submit' to finalize your order.
 
-        <h2>How to Use</h2>
-        <p>Once the page is open in your browser, you can:</p>
-        <ul>
-            <li>Choose the size of your drink.</li>
-            <li>Set the level of sweetness.</li>
-            <li>Select ice Level.</li>
-            <li>Select a flavor for your bubble tea.</li>
-            <li>Pick your desired toppings.</li>
-            <li>Click on 'Preview' to see your custom order.</li>
-            <li>Click 'Submit' to finalize your order.</li>
-        </ul>
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-        <h2>License</h2>
-        <p>This project is licensed under the MIT License - see the <a href="LICENSE" target="_blank">LICENSE</a> file for details.</p>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 Bubble Trouble</p>
-    </footer>
-</body>
-</html>
+
+
