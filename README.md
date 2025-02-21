@@ -9,7 +9,7 @@ This is a simple web project that simulates a bubble tea shop. The site allows u
 - Multiple topping choices
 - Order preview and submission
 
-![Bubble Tea](/Users/dishashetty/Desktop/Bubble-Trouble/img/Readme.png)
+![Bubble Tea](./img/Readme.png)
 
 ## Technologies Used
 This project is built with the following technologies:
