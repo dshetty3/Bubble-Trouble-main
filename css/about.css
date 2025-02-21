@@ -1,8 +1,8 @@
  /*========== COLORS ==========*/
 
  :root {
-    --color-primary: #FFB7C5;
-    --color-extra: #e9d4e0;
+    --color-primary:rgb(159, 68, 110);
+    --color-extra:rgb(184, 92, 144);
     --color-black: #000;
     --color-white: #fff;
 }

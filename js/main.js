@@ -8,7 +8,6 @@ const orderState = {
     base: null,
     flavor: null,
     topping: null,
-    label: null
 };
 
 // BUTTON
@@ -29,7 +28,6 @@ const baseButton = document.querySelectorAll('.board__base__button')
 const flavorButton = document.querySelectorAll('.board__flavor__button')
 const toppingButton = document.querySelectorAll('.board__topping__button')
 const strawButton = document.querySelectorAll('.board__straw__button')
-const labelButton = document.querySelectorAll('.board__label__button')
 
 // CUP SIZE
 const cup = document.querySelector('.main__cup')
@@ -60,7 +58,6 @@ const boardBase = document.querySelector('.board__base')
 const boardFlavor = document.querySelector('.board__flavor')
 const boardTopping = document.querySelector('.board__topping')
 const boardStraw = document.querySelector('.board__straw')
-const boardLabel = document.querySelector('.board__label')
 const boardDone = document.querySelector('.board__done')
 
 // DISTRIB
@@ -77,6 +74,9 @@ const jelly = document.querySelector('.topping__jelly')
 const jellyButton = document.querySelector('.jelly')
 const multi = document.querySelector('.topping__multi')
 const multiButton = document.querySelector('.multi')
+const ice = document.querySelector('.topping__ice')
+const iceLevelButton = document.querySelector('.ice')
+
 
 // SOUND 
 //effect
@@ -106,20 +106,8 @@ const machineMiddle = document.querySelector('.js-middle')
 const machineMiddleBg = document.querySelector('.js-middle-bg')
 const machineTop = document.querySelector('.main__machine__top')
 const machineBottom = document.querySelector('.main__machine__bot')
-// WORK
-const work = document.querySelector('.js-work')
-// WORK 3D
-const poster3D = document.querySelector('.js-poster-3D')
-const work3D = document.querySelector('.js-work3D')
-const work3DClose = document.querySelector('.js-work-3D-close')
-const posterLogo = document.querySelector('.js-poster-logo')
-const workLogo = document.querySelector('.js-work-logo')
-const workLogoClose = document.querySelector('.js-work-logo-close')
-const posterRecipe = document.querySelector('.js-poster-recipe')
-const workRecipe = document.querySelector('.js-work-recipe')
-const workRecipeClose = document.querySelector('.js-work-recipe-close')
 
-// EVENT LISTENER CLICK
+
 // BOARD 
 // BOARD > WELCOME BUTTON
 welcomeButton.forEach(welcomeButton => {
@@ -151,9 +139,7 @@ sizeButton.forEach(sizeButton => {
         }, 100);
         boardTitle.querySelector('.size').classList.add('hidden')
         boardTitle.querySelector('.sugar').classList.remove('hidden')
-        boardLabel.classList.add('hidden')
         boardSugar.classList.remove('hidden')
-        //teaBase.classList.remove('hidden')
         orderState.size = sizeButton.getAttribute('data'); 
         document.getElementById("size").value = orderState.size;
     })
@@ -210,18 +196,21 @@ document.querySelectorAll('.circle.board__sugar__button').forEach(circle => {
 iceButton.forEach(iceButton => {
     iceButton.addEventListener('click', () => {
         stickSound.play()
-        // distribTopping.classList.remove('distrib-topping')
-        // circleLiquid.style.background = iceButton.getAttribute('data')
-        // setTimeout(() => {
-        //     distrib.classList.add('change-distrib')
-        //     distribBot.style.width = '0px'
-        //     distribTopping.classList.add('distrib-topping')
-        //     boardTopping.classList.add('next-board')
-        // }, 200);
+        distribTopping.classList.remove('ice-topping')
+        circleLiquid.style.background = iceButton.getAttribute('data')
+        if (iceButton.getAttribute('value') !== 'No Ice'){
+        setTimeout(() => {
+            distrib.classList.add('change-distrib')
+            distribBot.style.width = '0px'
+            distribTopping.classList.add('ice-topping')
+            ice.classList.remove('hidden') 
+
+        }, 100);
+    }
         flavorLiquid.classList.remove('flavor-animation')
         distribLiquid.classList.remove('distrib-animation')
+        boardTitle.querySelector('.tea').classList.remove('hidden') 
         boardTitle.querySelector('.ice').classList.add('hidden')
-        boardTitle.querySelector('.tea').classList.remove('hidden')
         boardIce.classList.remove('hidden')
         teaBase.classList.remove('hidden')
         boardSize.classList.add('hidden')
@@ -230,7 +219,6 @@ iceButton.forEach(iceButton => {
         document.getElementById("sugar").value = orderState.sugar + " + " + orderState.ice;
     })
 })
-
 
 
 //Base
@@ -271,42 +259,53 @@ baseButton.forEach(baseButton => {
 
         }, 100);
         boardTitle.querySelector('.base').classList.add('hidden')
-        boardTitle.querySelector('.label').classList.remove('hidden')
+        boardTitle.querySelector('.flavor').classList.remove('hidden')
+        label.style.background = "#C8AD7F";
         boardBase.classList.remove('hidden')
         boardSize.classList.add('hidden')
-        boardLabel.classList.remove('hidden')
+        boardFlavor.classList.remove('hidden')
         boardBase.classList.add('hidden')
         orderState.base = baseButton.getAttribute('value'); 
         document.getElementById("base").value = orderState.tea + " + " + orderState.base;
+
+        const milkSeries = ["Matcha", "Passion Fruit", "Taro", "Brown Sugar", "Thai", "Rose", "Honeydew", "Mango", "Jasmine", "Strawberry"];
+        const lemonSeries = ["Mango", "Lychee", "Pineapple", "Orange", "Stawberry", "Peach"];
+        const juiceSeries = ["Passion Fruit", "Rose", "Honeydew", "Pineapple", "Mango", "Lychee", "Watermelon", "Orange", "Peach", "Strawberry" ]
+
+        if (document.getElementById("base").value.includes('Milk')) {
+            console.log("Milk Selected");
+            document.querySelectorAll(".board__flavor .board__flavor__button").forEach(el => {
+                const flavor = el.getAttribute("value");
+                if (milkSeries.includes(flavor)) {
+                    el.classList.remove("hidden");
+                } else {
+                    el.classList.add("hidden");
+                }
+            });
+        } else if (document.getElementById("base").value.includes('Lemon')) {
+            console.log("Lemon Selected");
+            document.querySelectorAll(".board__flavor .board__flavor__button").forEach(el => {
+                const flavor = el.getAttribute("value");
+                if (lemonSeries.includes(flavor)) {
+                    el.classList.remove("hidden");
+                } else {
+                    el.classList.add("hidden");
+                }
+            });
+        } else {
+            console.log("Juice Selected");
+            document.querySelectorAll(".board__flavor .board__flavor__button").forEach(el => {
+                const flavor = el.getAttribute("value");
+                if (juiceSeries.includes(flavor)) {
+                    el.classList.remove("hidden"); 
+                } else {
+                    el.classList.add("hidden"); 
+                }
+            });
+        }
+
     })
 })
-
-
-
-// BOARD > LABEL > BUTTON
-labelButton.forEach(labelButton => {
-    labelButton.addEventListener('click', () => {
-        stickSound.play()
-        if (document.getElementById("base").value == 'milk'){
-            console.log("milk")
-        } else console.log("Other")
-        label.style.background = labelButton.getAttribute('data')
-        setTimeout(() => {
-            boardLabel.classList.add('next-board')
-        }, 100);
-        boardTitle.querySelector('.label').classList.add('hidden')
-        boardTitle.querySelector('.flavor').classList.remove('hidden')
-        boardFlavor.classList.remove('hidden')
-        boardSize.classList.add('hidden')
-        orderState.label = labelButton.getAttribute('value'); 
-        document.getElementById("label").value = orderState.label;
-    })
-    labelButton.addEventListener('click', () => {
-        label.style.background = labelButton.getAttribute('data')
-    })
-   
-})
-
 
 // BOARD > FLAVOR > BUTTON
 flavorButton.forEach(flavorButton => {
@@ -324,31 +323,32 @@ flavorButton.forEach(flavorButton => {
         }, 100);
         boardTitle.querySelector('.topping').classList.remove('hidden')
         boardTitle.querySelector('.flavor').classList.add('hidden')
-        boardTitle.querySelector('.label').classList.add('hidden')
         boardTopping.classList.remove('hidden')
         boardStraw.classList.add('hidden')
-        boardLabel.classList.add('hidden')
         boardSize.classList.add('hidden')
         orderState.flavor = flavorButton.getAttribute('value'); 
         document.getElementById("flavor").value = orderState.flavor;
 
     })
+    flavorButton.addEventListener("mouseenter", function () {
+        flavorButton.style.background = flavorButton.getAttribute('data'); 
+    });
+    flavorButton.addEventListener("mouseleave", function () {
+        flavorButton.style.background = ""; 
+    });
 })
 
 // BOARD > TOPPING
 // BOARD > TOPPING > BUTTON
 toppingButton.forEach(toppingButton => {
     toppingButton.addEventListener('click', () => {
-       
         distribTopping.classList.remove('distrib-topping')
-        circleLiquid.style.background = toppingButton.getAttribute('data')
         setTimeout(() => {
             distrib.classList.add('change-distrib')
             distribBot.style.width = '0px'
             distribTopping.classList.add('distrib-topping')
             boardTopping.classList.add('next-board')
         }, 200);
-        // next
         boardTitle.querySelector('.flavor').classList.add('hidden')
         boardTitle.querySelector('.topping').classList.add('hidden')
         boardFlavor.classList.add('hidden')
@@ -367,8 +367,6 @@ toppingButton.forEach(toppingButton => {
 
 
         const button = document.getElementById("place__order");
-        const blackboard = document.querySelector(".blackboard");
-    
         button.addEventListener("click", () => {
             button.innerHTML = `<h2 id="order-placed">Order Placed!</h2>`;
                 setTimeout(() => {
@@ -381,8 +379,6 @@ toppingButton.forEach(toppingButton => {
                 }
             }, 0); 
         });
-    
-
     })
 })
 
@@ -407,6 +403,8 @@ multiButton.addEventListener('click', function () {
 })
 
 
+
+
 //FOOTER > TRASH
 trash.addEventListener('click', () => {
     stickSound.play()
@@ -415,7 +413,6 @@ trash.addEventListener('click', () => {
     multi.classList.add('hidden')
     setTimeout(() => {
         boardSize.classList.remove('next-board')
-        boardLabel.classList.remove('next-board')
         boardFlavor.classList.remove('next-board')
         boardTopping.classList.remove('next-board')
         boardDone.classList.remove('next-board')
@@ -426,8 +423,9 @@ trash.addEventListener('click', () => {
         straw.style.background = ('transparent')
         label.style.background = ('transparent')
         boardWelcome.classList.add('hidden')
+        distribTopping.classList.remove('ice-topping')
+        distribTopping.classList.remove('distrib-topping')
         boardFlavor.classList.add('hidden')
-        boardLabel.classList.add('hidden')
         boardTopping.classList.add('hidden')
         boardStraw.classList.add('hidden')
         boardDone.classList.add('hidden')
@@ -437,9 +435,11 @@ trash.addEventListener('click', () => {
         boardSugar.classList.add('hidden')
         boardIce.classList.add('hidden')
     }, 100);
+    document.getElementById("place__order").disabled = true;
     cup.classList.add('hidden')
     distrib.classList.remove('change-distrib')
     distribBot.style.width = '20%'
+    ice.classList.add('hidden')
     boardTitle.querySelector('.size').classList.remove('hidden')
     boardTitle.querySelector('.welcome').classList.add('hidden')
     boardTitle.querySelector('.topping').classList.add('hidden')
@@ -447,12 +447,10 @@ trash.addEventListener('click', () => {
     boardTitle.querySelector('.tea').classList.add('hidden')
     boardTitle.querySelector('.flavor').classList.add('hidden')
     boardTitle.querySelector('.done').classList.add('hidden')
-    boardTitle.querySelector('.label').classList.add('hidden')
     boardTitle.querySelector('.sugar').classList.add('hidden')
     boardTitle.querySelector('.ice').classList.add('hidden')
     document.getElementById("size").value = " ";
     document.getElementById("base").value = " ";
-    document.getElementById("label").value = " ";
     document.getElementById("flavor").value = " ";
     document.getElementById("topping").value = " ";
     document.getElementById("sugar").value = " ";
@@ -489,44 +487,25 @@ function night(){
 }
 
 
-//WORK POSTER
-poster3D.addEventListener('click', () =>{
-    stickSound.play()
-    work.classList.remove('hidden')
-    work3D.classList.remove('hidden')
-})
+// //CLOSE WINDOW 
 
-posterLogo.addEventListener('click', () =>{
-    stickSound.play()
-    work.classList.remove('hidden')
-    workLogo.classList.remove('hidden')
-})
+// work3DClose.addEventListener('click' , quit)
+// workLogoClose.addEventListener('click' , quit)
+// workRecipeClose.addEventListener('click' , quit)
 
-posterRecipe.addEventListener('click', () =>{
-    stickSound.play()
-    work.classList.remove('hidden')
-    workRecipe.classList.remove('hidden')
-})
+// function quit(){
+//     stickSound.play()
+//     work.classList.add('hidden')
+//     workLogo.classList.add('hidden')
+//     work3D.classList.add('hidden')
+//     workRecipe.classList.add('hidden')
+// }
 
-//CLOSE WINDOW 
-
-work3DClose.addEventListener('click' , quit)
-workLogoClose.addEventListener('click' , quit)
-workRecipeClose.addEventListener('click' , quit)
-
-function quit(){
-    stickSound.play()
-    work.classList.add('hidden')
-    workLogo.classList.add('hidden')
-    work3D.classList.add('hidden')
-    workRecipe.classList.add('hidden')
-}
-
-document.addEventListener('keyup', event => {
-    if (event.key == 'Escape') {
-        quit()
-    }
-})
+// document.addEventListener('keyup', event => {
+//     if (event.key == 'Escape') {
+//         quit()
+//     }
+// })
 
 
 

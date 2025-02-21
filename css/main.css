@@ -428,8 +428,12 @@
             .main__machine__middle__distrib__topping__bubble__tapioca {
               background-color: #462713; }
             .main__machine__middle__distrib__topping__bubble__jelly {
-              background: #fb8fc5;
+              background:rgb(204, 10, 107);
               border-radius: 5px; }
+            .main__machine__middle__distrib__topping__bubble__ice{
+              background:rgb(227, 224, 224);
+              border-radius: 3px;
+            }
             .main__machine__middle__distrib__topping__bubble::before {
               position: absolute;
               top: 4px;
@@ -550,7 +554,8 @@
         z-index: 1; }
         .main__cup__body__contain__logo {
           width: 100%;
-          height: 100%; }
+          height: 100%;
+          }
       .main__cup__body__liquid {
         bottom: 12px;
         position: absolute;
@@ -861,20 +866,6 @@
       .board__flavor__button:hover{
         cursor: pointer;
         transform: scale(1.08); }
-      .board__flavor__button:nth-child(1):hover {
-        background-color: #a2ce7c; }
-      .board__flavor__button:nth-child(2):hover {
-        background-color: rgba(153, 44, 77, 0.8); }
-      .board__flavor__button:nth-child(3):hover {
-        background-color: #d0c0e4; }
-      .board__flavor__button:nth-child(4):hover {
-        background-color: #f9ea60cc; }
-      .board__flavor__button:nth-child(5):hover {
-        background-color: #ff9d41; }
-      .board__flavor__button:nth-child(6):hover {
-        background-color: #ffbeb3; }
-      .board__flavor__button:nth-child(7):hover {
-        background-color: #e3ba8fe6; }
   .board__topping {
     position: absolute;
     animation-name: board-button;
@@ -1067,7 +1058,7 @@
 .disk-animation {
   animation-play-state: running; }
 
-.distrib-topping {
+.distrib-topping, .ice-topping {
   animation-name: bubble-rain;
   animation-iteration-count: 1;
   animation-duration: 3s;
@@ -1331,7 +1322,7 @@
     width: 20px;
     height: 20px; }
 
-  .distrib-topping {
+  .distrib-topping, .ice-topping {
     animation-name: bubble-rain-resp; }
 
   .distrib-animation {
@@ -1535,6 +1526,9 @@ button:not(:hover) span {
       transform: scale(1);
     }
 }
+
+
+
 
 
 
